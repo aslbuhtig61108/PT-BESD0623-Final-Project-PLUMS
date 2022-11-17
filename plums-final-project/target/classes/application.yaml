@@ -1,10 +1,8 @@
 spring:
-   datasource:
-      driverClassName: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/plums
-      username: plums
-      password: plums
-
+  datasource:
+      password: jeep
+      username: jeep
+      url: jdbc:mysql://localhost:3306/jeep
 logging:
   level:
     root: warn

@@ -8,7 +8,6 @@ INDEX VERSION 1.131+C:\Users\nilat\Desktop\PT BESD0623 Final Project 2022\.metad
 1293500781.index
 1469883281.index
 1205328561.index
-1198129915.index
 3407255309.index
 610927645.index
 3495359418.index
