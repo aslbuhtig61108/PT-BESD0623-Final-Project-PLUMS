@@ -1,0 +1,10 @@
+spring:
+  datasource:
+    password: plums
+    username: plums
+    url: jdbc:mysql://localhost:3306/plums
+
+logging:
+  level:
+    root: warn
+    '[com.promineotech]' : debug

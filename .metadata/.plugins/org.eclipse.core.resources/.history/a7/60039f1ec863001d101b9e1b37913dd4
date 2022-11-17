@@ -1,0 +1,7 @@
+package com.promineotech.plums.entity;
+
+public class Library {
+
+	private int libraryid_pk;
+	private int booknumber_fk;
+}

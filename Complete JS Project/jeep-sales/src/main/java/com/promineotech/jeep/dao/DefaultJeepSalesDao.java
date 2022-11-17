@@ -18,12 +18,11 @@ import com.promineotech.jeep.entity.Jeep;
 import com.promineotech.jeep.entity.JeepModel;
 import lombok.extern.slf4j.Slf4j;
 
-@Component // W15 - Coding Assignment - ITEM#3a
+@Component
 @Slf4j
 public class DefaultJeepSalesDao implements JeepSalesDao {
 
   @Autowired
-  // W15 - Coding Assignment - ITEM#3c
   private NamedParameterJdbcTemplate jdbcTemplate;
 
   /**
@@ -62,8 +61,6 @@ public class DefaultJeepSalesDao implements JeepSalesDao {
 
         return Optional.empty();
       }
-
-
     });
   }
 
@@ -87,25 +84,20 @@ public class DefaultJeepSalesDao implements JeepSalesDao {
   }
 
   @Override
-  // W15 - Coding Assignment - ITEM#3b
   public List<Jeep> fetchJeeps(JeepModel model, String trim) {
     log.debug("DAO: model={}, trim={}", model, trim);
 
-    // W15 - Coding Assignment - ITEM#3d
     //@formatter:off
 		String sql = ""
 			+ "SELECT * "
 			+ "FROM models "
 			+ "WHERE model_id = :model_id AND trim_level = :trim_level";
-		//@formatter:on
+	//@formatter:on
 
-    // W15 - Coding Assignment - ITEM#3e
-    // Creates a map that we can pass into the namedparameterjdbc template 'jdbcTemplate'
     Map<String, Object> params = new HashMap<>();
     params.put("model_id", model.toString());
     params.put("trim_level", trim);
 
-    // W15 - Coding Assignment - ITEM#3f
     return jdbcTemplate.query(sql, params, new RowMapper<>() {
 
       @Override

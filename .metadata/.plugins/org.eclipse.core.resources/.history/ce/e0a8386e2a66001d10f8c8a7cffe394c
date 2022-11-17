@@ -1,0 +1,34 @@
+package com.promineotech.plums.controller;
+
+import static org.assertj.core.api.Assertions.assertThat;
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+
+import com.promineotech.plums.controller.support.RetrieveBookListTestSupport;
+import com.promineotech.plums.entity.Book;
+import com.promineotech.plums.entity.Genre;
+
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+class RetrieveBookListTest extends RetrieveBookListTestSupport {
+
+	@Test
+	void testThatRetrievesEntireBookListByBookNumberOrGenre() {
+		
+		// Given: a request for the current book list either by book number or genre
+		Genre genre = Genre.JAVA;
+		String isbn = "978-0-13-767362-9";
+		String uri = String.format("%s?genre=%s&isbn=%s", getBaseUri(), genre, isbn);
+
+		// When: a connection is made to the URI
+		ResponseEntity<Book> result = getRestTemplate().getForEntity(uri, Book.class);
+		
+				
+		// Then: a success (OK - 200) status code is returned 
+		assertThat(result.getStatusCode()).isEqualTo(HttpStatus.OK);
+	}
+
+}

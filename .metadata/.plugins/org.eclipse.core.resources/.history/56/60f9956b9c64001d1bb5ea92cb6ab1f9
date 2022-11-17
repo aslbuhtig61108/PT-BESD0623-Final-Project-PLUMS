@@ -1,0 +1,9 @@
+package com.promineotech.plums.controller;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.info.Info;
+
+@OpenAPIDefinition(info = @Info())
+public interface BookListController {
+
+}

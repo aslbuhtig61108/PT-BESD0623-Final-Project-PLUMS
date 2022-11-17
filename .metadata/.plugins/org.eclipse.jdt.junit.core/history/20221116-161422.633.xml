@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="RetrieveBookListTest" project="plums-final-project" tests="1" started="1" failures="0" errors="0" ignored="0">
+  <testsuite name="com.promineotech.plums.controller.RetrieveBookListTest" time="0.666" displayname="RetrieveBookListTest" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.plums.controller.RetrieveBookListTest]">
+    <testcase name="testThatRetrievesEntireBookListByBookNumberOrGenre" classname="com.promineotech.plums.controller.RetrieveBookListTest" time="0.666" displayname="testThatRetrievesEntireBookListByBookNumberOrGenre()" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.plums.controller.RetrieveBookListTest]/[method:testThatRetrievesEntireBookListByBookNumberOrGenre()]"/>
+  </testsuite>
+</testrun>

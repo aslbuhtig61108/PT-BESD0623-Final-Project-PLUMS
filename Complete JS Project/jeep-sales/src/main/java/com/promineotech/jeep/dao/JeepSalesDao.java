@@ -15,10 +15,10 @@ public interface JeepSalesDao {
 	 * @param trim
 	 * @return
 	 */
-	List<Jeep> fetchJeeps (JeepModel model, String trim);
+	List<Jeep> fetchJeeps(JeepModel model, String trim);
 
-  void saveImage(Image image);
+	void saveImage(Image image);
 
-  Optional<Image> retrieveImage(String imageId);
-  
+	Optional<Image> retrieveImage(String imageId);
+
 }

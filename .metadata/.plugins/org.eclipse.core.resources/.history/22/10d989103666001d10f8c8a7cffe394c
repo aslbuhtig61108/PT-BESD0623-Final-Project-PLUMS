@@ -1,0 +1,19 @@
+package com.promineotech.plums.controller.support;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.promineotech.plums.entity.Book;
+
+public class BookEntityCrudTestSupport extends BaseTest {
+
+	protected List<Book> buildProposed() {
+		List<Book> list = new LinkedList<>();
+		
+		// formatter:off
+		
+		// formatter:on
+		
+		return list;
+	}
+}

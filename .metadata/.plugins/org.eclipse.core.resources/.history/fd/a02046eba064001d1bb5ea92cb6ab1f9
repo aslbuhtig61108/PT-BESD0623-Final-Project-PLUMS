@@ -1,0 +1,5 @@
+package com.promineotech.plums.service;
+
+public class DefaultGetBookListService implements GetBookListService {
+
+}

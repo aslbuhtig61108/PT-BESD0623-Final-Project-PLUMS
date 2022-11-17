@@ -1,0 +1,5 @@
+package com.promineotech.plums.controller.support;
+
+public class BookEntityCrudTestSupport extends BaseTest {
+
+}

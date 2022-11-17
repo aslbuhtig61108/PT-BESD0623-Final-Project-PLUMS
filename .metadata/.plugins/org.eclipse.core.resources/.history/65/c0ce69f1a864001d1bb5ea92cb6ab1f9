@@ -1,0 +1,28 @@
+package com.promineotech.plums.controller;
+
+
+
+import org.junit.jupiter.api.Test;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.context.SpringBootTest.WebEnvironment;
+
+import com.promineotech.plums.controller.support.GetBookListTestSupport;
+
+@SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
+class GetBookListTest extends GetBookListTestSupport {
+
+	@Test
+	void testThatRetrievesEntireBookList() {
+		
+		// Given: a request for the current book list
+		
+		
+		
+		// When: a connection is made to the URI
+		
+		
+				
+		// Then: a success (OK - 200) is 
+	}
+
+}

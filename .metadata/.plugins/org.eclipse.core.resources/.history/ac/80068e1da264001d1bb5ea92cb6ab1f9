@@ -1,0 +1,7 @@
+package com.promineotech.plums.controller.support;
+
+import org.springframework.boot.web.server.LocalServerPort;
+
+public class BaseTest {
+	@LocalServerPort
+}

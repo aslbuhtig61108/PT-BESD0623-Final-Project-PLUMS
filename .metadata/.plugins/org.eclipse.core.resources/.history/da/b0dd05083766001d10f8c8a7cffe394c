@@ -1,0 +1,27 @@
+package com.promineotech.plums.controller.support;
+
+import java.util.LinkedList;
+import java.util.List;
+
+import com.promineotech.plums.entity.Book;
+
+public class BookEntityCrudTestSupport extends BaseTest {
+
+	protected List<Book> buildProposed() {
+		List<Book> list = new LinkedList<>();
+		
+		// formatter:off
+		list.add(Book.builder()
+			
+			.build());
+		// formatter:on
+		
+		return list;
+	}
+
+// INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-13-767362-9',
+// 'JAVA', 'CORE JAVA: Volume 1: Fundamentals', 'Cay S. Horstmann', '12th Edition');
+// INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-1-1-62315-651-0',
+// 'RECIPES', 'Seoul Food Korean Cookbook', 'Naomi Imatome-Yun', '12th Edition 2015');
+
+}

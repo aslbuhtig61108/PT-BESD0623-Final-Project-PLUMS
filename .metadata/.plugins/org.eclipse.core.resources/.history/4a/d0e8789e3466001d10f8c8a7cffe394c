@@ -1,0 +1,13 @@
+package com.promineotech.plums.controller.support;
+
+import java.util.List;
+
+import com.promineotech.plums.entity.Book;
+
+public class BookEntityCrudTestSupport extends BaseTest {
+
+	protected List<Book> buildProposed() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

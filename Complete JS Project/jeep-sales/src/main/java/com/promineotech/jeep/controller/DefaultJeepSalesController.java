@@ -34,9 +34,7 @@ public class DefaultJeepSalesController implements JeepSalesController {
   @Override
   public List<Jeep> fetchJeeps(JeepModel model, String trim) {
     log.debug("model={}, trim={}", model, trim);
-    return jeepSalesService.fetchJeeps(model, trim); // W14 Coding assignment ITEM#7 instructs us to
-                                                     // keep this null instead of
-                                                     // jeepSalesService.fetchJeeps(model, trim);
+    return jeepSalesService.fetchJeeps(model, trim); 
   }
 
   @Override

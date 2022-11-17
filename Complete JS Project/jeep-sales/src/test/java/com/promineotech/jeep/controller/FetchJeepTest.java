@@ -3,9 +3,11 @@ package com.promineotech.jeep.controller;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.params.provider.Arguments.arguments;
 import static org.mockito.Mockito.doThrow;
+
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Stream;
+
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -21,6 +23,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
+
 import com.promineotech.jeep.Constants;
 import com.promineotech.jeep.controller.support.FetchJeepTestSupport;
 import com.promineotech.jeep.entity.Jeep;
@@ -37,21 +40,6 @@ class FetchJeepTest extends FetchJeepTestSupport {
           "classpath:flyway/migrations/V1.1__Jeep_Data.sql"},
       config = @SqlConfig(encoding = "utf-8"))
 
-//  This section was causing errors [Explain to Stephanie] so I moved it around with the code
-//  then remembered the error thrown referred to line 177:java:FetchJeepTest so I thought moving to
-//  the interface. After testing I got the green bar
-//  @Autowired
-//  @Getter // Not in the W14 coding instructions. Rewatching the videos helped me understand Lombok
-//        // annotations
-//  private TestRestTemplate restTemplate;
-//
-//  @LocalServerPort
-//  private int serverPort;
-//
-//  protected String getBaseUri() {
-//    return String.format("http://localhost:%d/jeeps", serverPort);
-//  }  
-  
   class TestThatDoNotPolluteTheApplicationContext extends FetchJeepTestSupport {
 
     @Test

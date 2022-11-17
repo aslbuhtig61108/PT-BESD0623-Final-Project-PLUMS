@@ -1,0 +1,11 @@
+package com.promineotech.plums;
+
+@SpringBootApp
+public class PlumsFinal {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

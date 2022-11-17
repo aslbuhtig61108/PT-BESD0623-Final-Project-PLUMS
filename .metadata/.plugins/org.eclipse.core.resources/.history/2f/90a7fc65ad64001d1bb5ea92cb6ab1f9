@@ -1,0 +1,30 @@
+package com.promineotech.plums.controller;
+
+import java.util.List;
+import com.promineotech.plums.entity.Book;
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.servers.Server;
+
+@OpenAPIDefinition(info= @Info(title = "Retrieve Book List"), servers = {
+		@Server(url = "http://localhost:8080", description = "Local server.")})
+
+public interface RetrieveBookListController {
+	
+	// formatter:off
+	@Operation(
+		summary = "Returns a list of Books",
+		description = "Returns a list of Books given an optional ",
+		responses = {
+				
+		},
+		parameters = {
+				
+		}
+	)
+	// formatter:on
+	
+	
+	List<Book> retrieveBooks();
+}

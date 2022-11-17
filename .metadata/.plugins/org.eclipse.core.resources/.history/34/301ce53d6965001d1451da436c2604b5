@@ -1,0 +1,54 @@
+package com.promineotech.plums.controller;
+
+import java.util.List;
+
+import com.promineotech.plums.entity.Book;
+
+import io.swagger.v3.oas.annotations.OpenAPIDefinition;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.info.Info;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.servers.Server;
+
+@OpenAPIDefinition(info= @Info(title = "Retrieve Book List Service"), servers = {
+		@Server(url = "http://localhost:8080", description = "Local server.")})
+
+public interface RetrieveBookListController {
+	List<Book> retrieveBookList(Enum<Genre>, String isbn);
+	// formatter:off
+	@Operation(
+		summary = "Returns a list of Books",
+		description = "Returns a list of Book(s) given an optional genre and book number",
+		responses = {
+			@ApiResponse(
+				responseCode = "200",
+				description = "A list of Books is returned",
+				content = @Content(
+					mediaType = "application/json",
+					schema = @Schema(implementation = Book.class))),
+			@ApiResponse(
+				responseCode = "400",
+				description = "The search paramters are invalid",
+				content = @Content(mediaType = "application/json")),
+			@ApiResponse(
+				responseCode = "404",
+				description = "No Book(s) were found with the input criteria",
+				content = @Content(mediaType = "application/json")),
+			@ApiResponse(
+				responseCode = "500",
+				description = "An unplanned error occurred.",
+				content = @Content(mediaType = "application/json"))
+		},
+		
+		
+		parameters = {
+				
+		}
+	)
+	// formatter:on
+	
+	
+	List<Book> retrieveBooks();
+}

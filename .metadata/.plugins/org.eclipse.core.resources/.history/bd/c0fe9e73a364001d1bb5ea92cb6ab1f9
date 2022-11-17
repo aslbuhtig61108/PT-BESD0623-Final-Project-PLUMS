@@ -1,0 +1,16 @@
+package com.promineotech.plums.controller;
+
+import static org.junit.jupiter.api.Assertions.*;
+
+import org.junit.jupiter.api.Test;
+
+import com.promineotech.plums.controller.support.GetBookListTestSupport;
+
+class GetBookListTest extends GetBookListTestSupport {
+
+	@Test
+	void test() {
+		fail("Not yet implemented");
+	}
+
+}
