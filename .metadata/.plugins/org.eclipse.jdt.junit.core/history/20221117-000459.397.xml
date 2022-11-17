@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="BookEntityCrudTest" project="plums-final-project" tests="2" started="2" failures="0" errors="0" ignored="1">
+  <testsuite name="com.promineotech.plums.controller.BookEntityCrudTest" time="0.334" displayname="BookEntityCrudTest" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.plums.controller.BookEntityCrudTest]">
+    <testcase name="testThatRetrievesEntireBookListByBookNumberOrGenre" classname="com.promineotech.plums.controller.BookEntityCrudTest" time="0.0" ignored="true" displayname="testThatRetrievesEntireBookListByBookNumberOrGenre()" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.plums.controller.BookEntityCrudTest]/[method:testThatRetrievesEntireBookListByBookNumberOrGenre()]"/>
+    <testcase name="testDb" classname="com.promineotech.plums.controller.BookEntityCrudTest" time="0.334" displayname="testDb()" uniqueid="[engine:junit-jupiter]/[class:com.promineotech.plums.controller.BookEntityCrudTest]/[method:testDb()]"/>
+  </testsuite>
+</testrun>
