@@ -52,24 +52,25 @@ public interface BookController {
 		
 		parameters = {
 			@Parameter(
-				name = "genre",
+				name = "ISBN",
 				allowEmptyValue = false,
 				required = false,
-				description = "The genre the book is categorized (i.e., 'JAVA')"),
+				description = "The unique ISBN number usually found on the back cover of the book (i.e., '000-0-0000-0000-0')"),
 			@Parameter(
-				name = "isbn",
-				allowEmptyValue = false,
-				required = false,
-				description = "The unique ISBN number usually found on the back cover of the book (i.e., '000-0-0000-0000-0')")
+					name = "Genre",
+					allowEmptyValue = false,
+					required = false,
+					description = "The genre the book is categorized (i.e., 'JAVA')")
 		}
 	)
 	
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
-	List<Book> retrieveBooks(
+	List<Book> retrieveAllBooks(
 			@RequestParam(required = false)
-				Genre genre,
+				String isbn,
 			@RequestParam(required = false)
-				String isbn);
+				Genre genre);
 	// formatter:on
+		
 }

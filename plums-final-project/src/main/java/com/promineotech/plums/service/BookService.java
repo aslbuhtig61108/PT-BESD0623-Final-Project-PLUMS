@@ -9,10 +9,10 @@ public interface BookService {
 
 	/**
 	 * 
-	 * @param genre
 	 * @param isbn
+	 * @param genre
 	 * @return
 	 */
-	List<Book> retrieveBooks(Genre genre, String isbn);
+	List<Book> retrieveAllBooks(String isbn, Genre genre);
 
 }

@@ -1,0 +1,20 @@
+package com.promineotech.plums.dao;
+
+import java.util.List;
+
+import com.promineotech.plums.entity.Book;
+import com.promineotech.plums.entity.Genre;
+
+public interface BookDao {
+
+	/**
+	 * 
+	 * @param isbn
+	 * @param genre
+	 * @return
+	 */
+	List<Book> retrieveAllBooks(String isbn, Genre genre);
+
+
+
+}
