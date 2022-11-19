@@ -19,7 +19,7 @@ public class DefaultBookService implements BookService {
 	
 	@Override
 	public List<Book> retrieveAllBooks(String isbn, Genre genre) {
-		log.info("The retrieveAllBooks method was called with ISBN={} and Genre={}", isbn, genre);
+		log.info("Service: ISBN={} and Genre={}", isbn, genre);
 		return bookDao.retrieveAllBooks(isbn, genre);
 	}
 

@@ -1,6 +1,14 @@
-java.lang.NullPointerException: Cannot invoke "org.springframework.jdbc.core.JdbcTemplate.queryForObject(String, java.lang.Class)" because "jdbcTemplate" is null
-	at org.springframework.test.jdbc.JdbcTestUtils.countRowsInTable(JdbcTestUtils.java:53)
-	at com.promineotech.plums.controller.BookEntityCrudTest.testDb(BookEntityCrudTest.java:36)
+org.opentest4j.AssertionFailedError: 
+expected: 
+  [Book(booknumber_pk=0, isbn=978-0-13-767362-9, genre=JAVA, title=CORE JAVA: Volume 1: Fundamentals, book_authors=Cay S. Horstmann, notes=12th Edition),
+      Book(booknumber_pk=0, isbn=978-1-1-62315-651-0, genre=RECIPES, title=Seoul Food Korean Cookbook, book_authors=Naomi Imatome-Yun, notes=12th Edition 2015)]
+ but was: 
+  []
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at com.promineotech.plums.controller.BookEntityCrudTest.testThatRetrievesEntireBookListByBookNumberOrGenre(BookEntityCrudTest.java:46)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)

@@ -26,4 +26,7 @@
     <fullyQualifiedTypeName name="org.springframework.test.context.jdbc.SqlConfig"/>
     <fullyQualifiedTypeName name="org.springframework.beans.factory.annotation.Autowired"/>
     <fullyQualifiedTypeName name="org.springframework.test.jdbc.JdbcTestUtils"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.GetMapping"/>
+    <fullyQualifiedTypeName name="org.springframework.web.bind.annotation.ResponseStatus"/>
+    <fullyQualifiedTypeName name="com.promineotech.plums.dao.BookDao"/>
 </qualifiedTypeNameHistroy>

@@ -20,7 +20,7 @@ public class DefaultBookController implements BookController {
 	
 	@Override
 	public List<Book> retrieveAllBooks(String isbn, Genre genre) {
-		log.debug("Controller: ISBN={}, Genre={}", isbn, genre);
+		log.debug("Controller: ISBN={} and Genre={}", isbn, genre);
 		return bookService.retrieveAllBooks(isbn, genre);
 	}
 

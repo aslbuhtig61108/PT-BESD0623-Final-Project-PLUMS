@@ -1,16 +1,13 @@
 package com.promineotech.plums.controller;
 
 import java.util.List;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
-
 import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.Genre;
-
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
@@ -28,7 +25,7 @@ public interface BookController {
 	// formatter:off
 	@Operation(
 		summary = "Returns a list of Books",
-		description = "Returns a list of Book(s) given a genre and an ISBN number",
+		description = "Returns a list of Book(s) given an ISBN number and a genre",
 		responses = {
 			@ApiResponse(
 				responseCode = "200",
@@ -52,25 +49,24 @@ public interface BookController {
 		
 		parameters = {
 			@Parameter(
-				name = "ISBN",
+				name = "isbn",
 				allowEmptyValue = false,
 				required = false,
 				description = "The unique ISBN number usually found on the back cover of the book (i.e., '000-0-0000-0000-0')"),
 			@Parameter(
-					name = "Genre",
-					allowEmptyValue = false,
-					required = false,
-					description = "The genre the book is categorized (i.e., 'JAVA')")
+				name = "genre",
+				allowEmptyValue = false,
+				required = false,
+				description = "The genre the book is categorized (i.e., 'JAVA')")
 		}
 	)
-	
+
 	@GetMapping
 	@ResponseStatus(code = HttpStatus.OK)
 	List<Book> retrieveAllBooks(
-			@RequestParam(required = false)
-				String isbn,
-			@RequestParam(required = false)
-				Genre genre);
+		@RequestParam(required = false)
+			String isbn,
+		@RequestParam(required = false)
+			Genre genre);
 	// formatter:on
-		
 }
