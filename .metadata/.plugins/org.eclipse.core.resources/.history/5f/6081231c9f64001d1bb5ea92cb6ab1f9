@@ -1,5 +1,0 @@
-package com.promineotech.plums.dao;
-
-public class DefaultBookListDao implements GetBookListDao {
-
-}

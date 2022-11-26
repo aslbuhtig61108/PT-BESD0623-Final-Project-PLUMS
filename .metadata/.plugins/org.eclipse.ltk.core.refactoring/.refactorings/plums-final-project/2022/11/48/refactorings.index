@@ -1,0 +1,3 @@
+1668902582697	Extract method 'createBookEntryBody'
+1668903812761	Rename local variable 'uri'
+1668905837966	Rename local variable 'bookEntryRequest'

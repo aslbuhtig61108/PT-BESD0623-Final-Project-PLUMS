@@ -1,14 +1,13 @@
 package com.promineotech.plums.controller;
 
 import java.util.List;
-
+import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.promineotech.plums.entity.Book;
+import com.promineotech.plums.entity.BookEntryRequest;
 import com.promineotech.plums.entity.Genre;
 import com.promineotech.plums.service.BookService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @RestController
@@ -19,9 +18,21 @@ public class DefaultBookController implements BookController {
 	private BookService bookService;
 	
 	@Override
-	public List<Book> retrieveAllBooks(String isbn, Genre genre) {
-		log.debug("Controller: ISBN={} and Genre={}", isbn, genre);
-		return bookService.retrieveAllBooks(isbn, genre);
+	public List<Book> retrieveABook(String isbn, Genre genre) {
+		log.debug("Controller: ISBN={} or Genre={}", isbn, genre);
+		return bookService.retrieveABook(isbn, genre);
 	}
 
+	@Override
+	public Book createBookEntry(@Valid BookEntryRequest newBookEntry) {
+		log.debug("Book={}", newBookEntry);
+		return bookService.createBookEntry(newBookEntry);
+	}
+
+	@Override
+	public List<Book> retrieveAllBooks() {
+		// finalBookList value
+		return bookService.retrieveAllBooks();
+	}
+	
 }

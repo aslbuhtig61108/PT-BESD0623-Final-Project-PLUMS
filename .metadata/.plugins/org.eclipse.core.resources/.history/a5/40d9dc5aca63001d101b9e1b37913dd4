@@ -1,5 +1,0 @@
-package com.promineotech.plums.controller;
-
-public class DefaultPlumsController implements PlumsController {
-
-}

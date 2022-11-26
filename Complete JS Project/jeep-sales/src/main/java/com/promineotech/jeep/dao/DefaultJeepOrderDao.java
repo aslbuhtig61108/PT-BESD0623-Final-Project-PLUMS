@@ -370,6 +370,7 @@ public class DefaultJeepOrderDao implements JeepOrderDao {
       rs.next();
 
       // @formatter:off
+      // refer to YT Video How to get all records by Ram N Java
       return Customer.builder()
           .customerId(rs.getString("customer_id"))
           .customerPK(rs.getLong("customer_pk"))

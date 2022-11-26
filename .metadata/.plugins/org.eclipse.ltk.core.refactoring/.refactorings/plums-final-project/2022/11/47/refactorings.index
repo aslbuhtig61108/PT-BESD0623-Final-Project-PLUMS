@@ -47,3 +47,5 @@
 1668741070913	Rename local variable 'in_genre'
 1668746683019	Delete element
 1668746690544	Delete element
+1668888124947	Rename method 'testThatRetrievesEntireBookListByBookNumberOrGenre'
+1668890490947	Rename method 'retrieveAllBooks'

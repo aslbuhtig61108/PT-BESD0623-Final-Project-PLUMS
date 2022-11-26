@@ -1,7 +1,6 @@
 package com.promineotech.plums.dao;
 
 import java.util.List;
-
 import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.Genre;
 
@@ -13,8 +12,9 @@ public interface BookDao {
 	 * @param genre
 	 * @return
 	 */
-	List<Book> retrieveAllBooks(String isbn, Genre genre);
+	List<Book> retrieveABook(String isbn, Genre genre);
 
+	List<Book> retrieveAllBooks();
 
 
 }

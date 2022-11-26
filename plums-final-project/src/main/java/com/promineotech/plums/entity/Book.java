@@ -1,5 +1,7 @@
 package com.promineotech.plums.entity;
 
+import java.util.Comparator;
+
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import lombok.AllArgsConstructor;
@@ -11,7 +13,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class Book {
+public class Book implements Comparable <Book>{
 
 	private int booknumber_pk;
 	private String isbn;
@@ -24,6 +26,18 @@ public class Book {
 	public int getBooknumber_pk() {
 		return booknumber_pk;
 	}
+
+	@Override
+	public int compareTo(Book that) {
+		// @formatter:off
+		return Comparator
+			.comparing(Book::getBooknumber_pk)
+			.thenComparing(Book::getTitle)
+			.thenComparing(Book::getGenre)
+			.compare(this, that);
+		// @formatter:on
+	}
+
 	
 	
 }
