@@ -39,7 +39,8 @@
     <fullyQualifiedTypeName name="org.springframework.http.HttpHeaders"/>
     <fullyQualifiedTypeName name="org.springframework.http.MediaType"/>
     <fullyQualifiedTypeName name="javax.validation.constraints.NotNull"/>
-    <fullyQualifiedTypeName name="com.promineotech.plums.entity.BookEntryRequest"/>
     <fullyQualifiedTypeName name="com.promineotech.plums.entity.Reader"/>
     <fullyQualifiedTypeName name="org.springframework.jdbc.core.RowMapperResultSetExtractor"/>
+    <fullyQualifiedTypeName name="java.util.Optional"/>
+    <fullyQualifiedTypeName name="com.promineotech.plums.entity.BookEntryRequest"/>
 </qualifiedTypeNameHistroy>

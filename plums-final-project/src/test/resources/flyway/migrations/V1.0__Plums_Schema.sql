@@ -1,4 +1,4 @@
-DROP TABLE IF EXISTS plums_main_db;
+ DROP TABLE IF EXISTS plums_main_db;
 DROP TABLE IF EXISTS libraries_books;
 DROP TABLE IF EXISTS libraries;
 DROP TABLE IF EXISTS readers;
@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS books;
 CREATE TABLE books (
   booknumber_pk int unsigned AUTO_INCREMENT,
   isbn varchar(30) NOT NULL,
-  genre enum('ADVENTURE', 'COMPUTER FORENSICS', 'CYBERSECURITY', 'EDUCATION', 'FICTION', 'JAVA', 'MANAGEMENT', 'RECIPES', 'SCIFI', 'SPIRITUAL', 'THRILLER') NOT NULL,
+  genre enum('ADVENTURE', 'FORENSICS', 'CYBERSECURITY', 'EDUCATION', 'FICTION', 'JAVA', 'MANAGEMENT', 'RECIPES', 'SCIFI', 'SPIRITUAL', 'THRILLER') NOT NULL,
   title varchar(128) NOT NULL,
   book_authors varchar(128) NOT NULL,
   notes text(52),

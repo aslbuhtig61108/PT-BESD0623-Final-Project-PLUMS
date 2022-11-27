@@ -13,7 +13,6 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
-import org.springframework.test.context.ActiveProfiles;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlConfig;
 import com.promineotech.plums.controller.support.BookEntityCrudTestSupport;
@@ -21,7 +20,7 @@ import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.Genre;
 
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-@ActiveProfiles("test")
+// @ActiveProfiles("test")
 @Sql(scripts = { "classpath:flyway/migrations/V1.0__Plums_Schema.sql",
 		"classpath:flyway/migrations/V1.1__Plums_Data.sql" },
 		config = @SqlConfig(encoding = "utf-8"))
@@ -32,7 +31,7 @@ class BookEntityCrudTest extends BookEntityCrudTestSupport {
 	void testCreateNewBookReturnsSuccess201() {
 		// Given: a book entry as JSON
 		String body = createBookEntryBody();
-		String uric = getBaseUriForBooks();
+		String uriForBooks = getBaseUriForBooks();
 		
 		HttpHeaders headers = new HttpHeaders();
 		headers.setContentType(MediaType.APPLICATION_JSON);
@@ -40,7 +39,7 @@ class BookEntityCrudTest extends BookEntityCrudTestSupport {
 		HttpEntity<String> bodyEntity = new HttpEntity<>(body, headers);
 		
 		// When: the book entry is sent
-		ResponseEntity<Book> newBookEntry = getRestTemplate().exchange(uric,
+		ResponseEntity<Book> newBookEntry = getRestTemplate().exchange(uriForBooks,
 			HttpMethod.POST, bodyEntity, Book.class);
 			
 		// Then: a 201 status is returned

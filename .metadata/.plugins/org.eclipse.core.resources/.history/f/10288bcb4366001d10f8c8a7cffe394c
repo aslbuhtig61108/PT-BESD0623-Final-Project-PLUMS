@@ -1,7 +1,0 @@
-spring.data.url
-
-
-logging:
-  level:
-    root: warn
-    '[com.promineotech]' : debug

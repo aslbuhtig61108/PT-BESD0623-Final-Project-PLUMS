@@ -1,6 +1,6 @@
 -- Books
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-7653-7112-6', 'ADVENTURE', 'The Rising', 'Heather Graham and Jon Land', 'Paperback 2016');
-INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-13-767362-9', 'COMPUTER FORENSICS', 'Guide To Computer Forensics', 'Bill Nelson, Amelia Phillips, Chris Steuart', '12th Edition');
+INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-13-767362-9', 'FORENSICS', 'Guide To Computer Forensics', 'Bill Nelson, Amelia Phillips, Chris Steuart', '12th Edition');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-19-991811-9', 'CYBERSECURITY', 'Cybersecurity and Cyberwar', 'P.W. Singer and Allan Friedman', '2014');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-1-138-91952-5', 'MANAGEMENT', 'Customer Relationship Management', 'Roger J. Baran and Robert J. Galka', '2nd Edition and paper back');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-1-59749-957-6', 'CYBERSECURITY', 'Violent Python', 'TJ OConnor', 'Publisher Syngress');

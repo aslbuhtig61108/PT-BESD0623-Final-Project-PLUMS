@@ -1,0 +1,8 @@
+package com.promineotech.plums.entity;
+
+public enum Genre {
+	ADVENTURE, FORENSICS, CYBERSECURITY, CONTROL,
+	EDUCATION, FICTION, JAVA, MANAGEMENT, RECIPES,
+	SCIFI, SPIRITUAL, THRILLER
+	
+}
