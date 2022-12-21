@@ -1,8 +1,0 @@
-spring:
-   datasource:
-      url: jdbc:h2:mem:plums;=MYSQL
-
-logging:
-  level:
-    root: warn
-    '[com.promineotech]' : debug

@@ -27,7 +27,7 @@ import io.swagger.v3.oas.annotations.servers.Server;
 
 @RequestMapping("/books")
 @OpenAPIDefinition(info = @Info(title = "Book Entry Service"), servers = {
-		@Server(url = "http://localhost:8080", description = "Local server.") })
+		@Server(url = "http://localhost:8080", description = "Local server") })
 public interface BookController {
 	
 	// formatter:off
