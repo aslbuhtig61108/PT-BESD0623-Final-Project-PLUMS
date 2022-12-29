@@ -60,6 +60,7 @@ public class DefaultBookDao implements BookDao {
 	// This method retrieves a list of all available books in the Books table
 	@Override
 	public List<Book> retrieveAllBooks() {
+		log.debug("DAO: All available books should be displayed");		
 		// @formatter:off
 		String sql = ""
 			+ "SELECT * "

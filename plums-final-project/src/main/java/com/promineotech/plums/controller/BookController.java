@@ -26,13 +26,50 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 @RequestMapping("/books")
-@OpenAPIDefinition(info = @Info(title = "Book Entry Service"), servers = {
+@OpenAPIDefinition(info = @Info(title = "Book Management Service"), servers = {
 		@Server(url = "http://localhost:8080", description = "Local server") })
 public interface BookController {
+
+	// formatter:off
+	@Operation(
+		summary = "Create an entry for a book",
+		description = "Returns the created Book",
+		responses = { 
+		    @ApiResponse(
+		        responseCode = "201",
+		        description = "The created Book is returned",
+		        content = @Content(
+		        	mediaType = "application/json",
+		        	schema = @Schema(implementation = Book.class))),
+		          @ApiResponse(
+		            responseCode = "400", 
+		            description = "The request parameters are invalid", 
+		            content = @Content(mediaType = "application/json" )),
+		          @ApiResponse(
+		            responseCode = "404", 
+		            description = "A Book component was not found with the input criteria",
+		            content = @Content(mediaType = "application/json" )),
+		          @ApiResponse(
+		            responseCode = "500", 
+		            description = "An unplanned error occurred.", 
+		            content = @Content(mediaType = "application/json" ))
+		},
+		      
+		parameters = {
+		    @Parameter(
+		        name = "newBookEntry",
+		        required = true, 
+		        description = "The book entry as JSON")
+	      })
+		  
+	@PostMapping ("/createBookEntry")
+	@ResponseStatus(code = HttpStatus.CREATED)
+	Book createBookEntry(@Valid @RequestBody BookEntryRequest newBookEntry);	
+	// formatter:on
 	
 	// formatter:off
 	@Operation(
-		summary = "Returns all Books",
+		summary = "Returns all books",
 		description = "Returns all Books found in the Books database of the PLUMS",
 		responses = {
 			@ApiResponse(
@@ -49,7 +86,7 @@ public interface BookController {
 	
 	)
 
-	@GetMapping ("/booksAllAvailable")
+	@GetMapping ("/booksAllBooks")
 	@ResponseStatus(code = HttpStatus.OK)
 	List<Book> retrieveAllBooks();
 	// formatter:on
@@ -57,8 +94,8 @@ public interface BookController {
 	
 	// formatter:off
 	@Operation(
-		summary = "Returns a list of Books",
-		description = "Returns a list of Book(s) given an ISBN number or a genre",
+		summary = "Returns a list of books",
+		description = "Returns a list of book(s) given an ISBN number or a genre",
 		responses = {
 			@ApiResponse(
 				responseCode = "200",
@@ -103,39 +140,5 @@ public interface BookController {
 			Genre genre);
 	// formatter:on
 	
-	@Operation(
-		summary = "Create an entry for a book",
-		description = "Returns the created Book",
-		responses = { 
-		    @ApiResponse(
-		        responseCode = "201",
-		        description = "The created Book is returned",
-		        content = @Content(
-		        	mediaType = "application/json",
-		        	schema = @Schema(implementation = Book.class))),
-		          @ApiResponse(
-		            responseCode = "400", 
-		            description = "The request parameters are invalid", 
-		            content = @Content(mediaType = "application/json" )),
-		          @ApiResponse(
-		            responseCode = "404", 
-		            description = "A Book component was not found with the input criteria",
-		            content = @Content(mediaType = "application/json" )),
-		          @ApiResponse(
-		            responseCode = "500", 
-		            description = "An unplanned error occurred.", 
-		            content = @Content(mediaType = "application/json" ))
-		},
-		      
-		parameters = {
-		    @Parameter(
-		        name = "newBookEntry",
-		        required = true, 
-		        description = "The book entry as JSON")
-	      })
-		  
-		@PostMapping ("/createBookEntry")
-		@ResponseStatus(code = HttpStatus.CREATED)
-		Book createBookEntry(@Valid @RequestBody BookEntryRequest newBookEntry);	
-		// formatter:on
+
 }

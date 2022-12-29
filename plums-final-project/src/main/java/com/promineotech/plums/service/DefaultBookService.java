@@ -56,6 +56,7 @@ public class DefaultBookService implements BookService {
 	@Transactional (readOnly = true)
 	@Override
 	public List<Book> retrieveAllBooks() {
+		log.info("The retrieveAllBooks method was called without any parameters");		
 		return bookDao.retrieveAllBooks();
 	}
 

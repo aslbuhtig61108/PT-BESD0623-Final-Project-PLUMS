@@ -7,7 +7,7 @@ DROP TABLE IF EXISTS books;
 CREATE TABLE books (
   booknumber_pk int unsigned AUTO_INCREMENT,
   isbn varchar(30) NOT NULL,
-  genre enum('ADVENTURE', 'FORENSICS', 'CYBERSECURITY', 'EDUCATION', 'FICTION', 'JAVA', 'MANAGEMENT', 'RECIPES', 'SCIFI', 'SPIRITUAL', 'THRILLER') NOT NULL,
+  genre enum('ADVENTURE', 'COMP_FORENSICS', 'CYBER_SEC', 'EDUCATION', 'FICTION', 'JAVA', 'MANAGEMENT', 'RECIPES', 'SCIFI', 'SPIRITUAL', 'THRILLER') NOT NULL,
   title varchar(128) NOT NULL,
   book_authors varchar(128) NOT NULL,
   notes text(52),
