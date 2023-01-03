@@ -5,7 +5,6 @@ import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.RowMapper;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -13,6 +12,7 @@ import org.springframework.stereotype.Component;
 
 import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.Genre;
+import com.promineotech.plums.entity.NewBookRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -23,6 +23,20 @@ public class DefaultBookDao implements BookDao {
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
+	// Creates a new book entry
+	@Override
+	public Book saveNewBook(NewBookRequest newBookEntry) {
+		// formatter:off
+		return Book.builder()
+			.title(newBookEntry.getTitle().toString())
+			.isbn(newBookEntry.getIsbn().toString())
+			.book_authors(newBookEntry.getAuthors().toString())
+			.genre(newBookEntry.getGenre())
+			.notes(newBookEntry.getNotes().toString())
+			.build();
+		// formatter:on
+	}
+		
 	// Retrieves a list of books from Books database
 	@Override
 	public List<Book> retrieveABook(String isbn, Genre genre) {
@@ -48,8 +62,8 @@ public class DefaultBookDao implements BookDao {
 					.booknumber_pk(rs.getInt("booknumber_pk"))
 					.title(rs.getString("title"))
 					.isbn(rs.getString("isbn"))
-					.genre(Genre.valueOf(rs.getString("genre")))
 					.book_authors(rs.getString("book_authors"))
+					.genre(Genre.valueOf(rs.getString("genre")))
 					.notes(rs.getString("notes"))
 					.build();
 				// @formatter:on
@@ -76,8 +90,8 @@ public class DefaultBookDao implements BookDao {
 				return Book.builder().booknumber_pk(rs.getInt("booknumber_pk"))
 					.title(rs.getString("title"))
 					.isbn(rs.getString("isbn"))
-					.genre(Genre.valueOf(rs.getString("genre")))
 					.book_authors(rs.getString("book_authors"))
+					.genre(Genre.valueOf(rs.getString("genre")))
 					.notes(rs.getString("notes"))
 					.build();
 					
@@ -87,4 +101,5 @@ public class DefaultBookDao implements BookDao {
 		});
 
 	}
+
 }

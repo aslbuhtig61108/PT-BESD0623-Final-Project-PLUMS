@@ -1,9 +1,11 @@
 package com.promineotech.plums.service;
 
 import java.util.List;
+
+import javax.validation.Valid;
 import com.promineotech.plums.entity.Book;
-import com.promineotech.plums.entity.BookEntryRequest;
 import com.promineotech.plums.entity.Genre;
+import com.promineotech.plums.entity.NewBookRequest;
 
 public interface BookService {
 
@@ -13,11 +15,10 @@ public interface BookService {
 	 * @param genre
 	 * @return
 	 */
+	Book createNewBook(@Valid NewBookRequest newBookEntry);
+	
 	List<Book> retrieveABook(String isbn, Genre genre);
 
-	Book createBookEntry(BookEntryRequest newBookEntry);
-
 	List<Book> retrieveAllBooks();
-
-
+	
 }

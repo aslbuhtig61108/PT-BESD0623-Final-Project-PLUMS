@@ -16,10 +16,10 @@ import lombok.NoArgsConstructor;
 public class Book implements Comparable <Book>{
 
 	private int booknumber_pk;
-	private String isbn;
-	private Genre genre;
 	private String title;
+	private String isbn;
 	private String book_authors;
+	private Genre genre;
 	private String notes;
 	
 	@JsonIgnore

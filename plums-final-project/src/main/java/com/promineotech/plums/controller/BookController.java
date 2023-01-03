@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseStatus;
 
 import com.promineotech.plums.entity.Book;
-import com.promineotech.plums.entity.BookEntryRequest;
+import com.promineotech.plums.entity.NewBookRequest;
 import com.promineotech.plums.entity.Genre;
 
 import io.swagger.v3.oas.annotations.OpenAPIDefinition;
@@ -26,13 +26,13 @@ import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
 @RequestMapping("/books")
-@OpenAPIDefinition(info = @Info(title = "Book Management Service"), servers = {
+@OpenAPIDefinition(info = @Info(title = "Book Management Service - PLUMS"), servers = {
 		@Server(url = "http://localhost:8080", description = "Local server") })
 public interface BookController {
 
 	// formatter:off
 	@Operation(
-		summary = "Create an entry for a book",
+		summary = "Create a new entry for a book",
 		description = "Returns the created Book",
 		responses = { 
 		    @ApiResponse(
@@ -60,11 +60,12 @@ public interface BookController {
 		        name = "newBookEntry",
 		        required = true, 
 		        description = "The book entry as JSON")
-	      })
+	      }
+	)	
 		  
 	@PostMapping ("/createBookEntry")
 	@ResponseStatus(code = HttpStatus.CREATED)
-	Book createBookEntry(@Valid @RequestBody BookEntryRequest newBookEntry);	
+	Book createNewBook(@Valid @RequestBody NewBookRequest newBookEntry);	
 	// formatter:on
 	
 	// formatter:off

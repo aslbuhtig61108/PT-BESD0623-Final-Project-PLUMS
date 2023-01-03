@@ -12,7 +12,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import com.promineotech.plums.dao.BookDao;
 import com.promineotech.plums.entity.Book;
-import com.promineotech.plums.entity.BookEntryRequest;
+import com.promineotech.plums.entity.NewBookRequest;
 import com.promineotech.plums.entity.Genre;
 
 import lombok.extern.slf4j.Slf4j;
@@ -26,13 +26,11 @@ public class DefaultBookService implements BookService {
 	
 	@Transactional
 	@Override
-	// Come back here after creating a new reader 
-	// REFERENCE: W15 V2 ts@21:18
-	public Book createBookEntry(@Valid BookEntryRequest newBookEntry) {
+	public Book createNewBook(@Valid NewBookRequest newBookEntry) {
 		log.debug("Book={}", newBookEntry);
 		
 		//Reader reader = bookDao.findReader();
-		return null;
+		return bookDao.saveNewBook(newBookEntry);
 	}
 	
 	@Transactional(readOnly = true)
