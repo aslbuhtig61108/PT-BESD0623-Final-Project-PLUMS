@@ -37,7 +37,4 @@ public class Book implements Comparable <Book>{
 			.compare(this, that);
 		// @formatter:on
 	}
-
-	
-	
 }

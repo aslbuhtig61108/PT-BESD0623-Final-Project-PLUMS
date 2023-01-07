@@ -3,13 +3,9 @@ package com.promineotech.plums.service;
 import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
-
-import javax.validation.Valid;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-
 import com.promineotech.plums.dao.BookDao;
 import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.NewBookRequest;
@@ -26,11 +22,16 @@ public class DefaultBookService implements BookService {
 	
 	@Transactional
 	@Override
-	public Book createNewBook(@Valid NewBookRequest newBookEntry) {
-		log.debug("Book={}", newBookEntry);
+	public Book createNewBook(NewBookRequest newBookEntry) {
+		log.info("Service: New book={}", newBookEntry);
 		
-		//Reader reader = bookDao.findReader();
-		return bookDao.saveNewBook(newBookEntry);
+		String title = newBookEntry.getTitle();
+		String isbn = newBookEntry.getIsbn();
+		String book_authors = newBookEntry.getAuthors();
+		String genre = newBookEntry.getGenre().toString();
+		String notes = newBookEntry.getNotes();
+		
+		return bookDao.saveNewBook(title, isbn, book_authors, genre, notes);
 	}
 	
 	@Transactional(readOnly = true)

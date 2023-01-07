@@ -3,7 +3,6 @@ package com.promineotech.plums.controller;
 import java.util.List;
 
 import javax.validation.Valid;
-
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -53,14 +52,15 @@ public interface BookController {
 		            responseCode = "500", 
 		            description = "An unplanned error occurred.", 
 		            content = @Content(mediaType = "application/json" ))
-		},
-		      
-		parameters = {
-		    @Parameter(
-		        name = "newBookEntry",
-		        required = true, 
-		        description = "The book entry as JSON")
-	      }
+		}
+//		,
+//		      
+//		parameters = {
+//		    @Parameter(
+//		        name = "newBookEntry",
+//		        required = true, 
+//		        description = "The book entry as JSON")
+//	      }
 	)	
 		  
 	@PostMapping ("/createBookEntry")

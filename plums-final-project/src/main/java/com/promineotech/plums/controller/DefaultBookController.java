@@ -1,7 +1,6 @@
 package com.promineotech.plums.controller;
 
 import java.util.List;
-import javax.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RestController;
 import com.promineotech.plums.entity.Book;
@@ -17,30 +16,24 @@ public class DefaultBookController implements BookController {
 
 	@Autowired
 	private BookService bookService;
-//	private RestTemplate restTemplate = new RestTemplate();
 
+	// This method requests user input to create a new book entry and saves it to the database
 	@Override
-	public Book createNewBook(@Valid NewBookRequest newBookEntry) {
-		log.debug("Book={}", newBookEntry);
-
-//		String bookBody = newBookEntry.toString();
-//		HttpHeaders headers = new HttpHeaders();
-//		headers.setContentType(MediaType.APPLICATION_JSON);
-//		HttpEntity<String> bookEntity = new HttpEntity<>(bookBody, headers);
-//		ResponseEntity<Book> response = restTemplate.exchange(null, HttpMethod.POST, bookEntity, Book.class);
-				
+	public Book createNewBook(NewBookRequest newBookEntry) {
+		log.debug("Controller: New book={}", newBookEntry);			
 		return bookService.createNewBook(newBookEntry);
 	}
 
+	// This method requests a list of available books filtered either by isbn and genre parameters
 	@Override
 	public List<Book> retrieveABook(String isbn, Genre genre) {
 		log.debug("Controller: ISBN={} or Genre={}", isbn, genre);
 		return bookService.retrieveABook(isbn, genre);
 	}
 	
+	// This method requests an entire list of available books in the current database
 	@Override
 	public List<Book> retrieveAllBooks() {
-		// finalBookList value
 		return bookService.retrieveAllBooks();
 	}
 	
