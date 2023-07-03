@@ -18,5 +18,9 @@ public interface BookService {
 	List<Book> retrieveABook(String isbn, Genre genre);
 
 	List<Book> retrieveAllBooks();
+
+	List<Book> updateABook(int booknumber_pk, NewBookRequest updateBookEntry);
+
+	List<Book> removeABook(int booknumber_pk);
 	
 }

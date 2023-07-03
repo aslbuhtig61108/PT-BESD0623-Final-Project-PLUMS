@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 
 import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.Genre;
+import com.promineotech.plums.entity.NewBookRequest;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -112,7 +113,8 @@ public class DefaultBookDao implements BookDao {
 			public Book mapRow(ResultSet rs, int rowNum) throws SQLException {
 				
 				// @formatter:off
-				return Book.builder().booknumber_pk(rs.getInt("booknumber_pk"))
+				return Book.builder()
+					.booknumber_pk(rs.getInt("booknumber_pk"))
 					.title(rs.getString("title"))
 					.isbn(rs.getString("isbn"))
 					.book_authors(rs.getString("book_authors"))
@@ -124,6 +126,18 @@ public class DefaultBookDao implements BookDao {
 			}
 
 		});
+	}
+
+	@Override
+	public List<Book> updateSelectedBook(int booknumber_pk, NewBookRequest updateBookEntry) {
+		// Continue from here L133 and deleting a book method (L139) after meeting with Steph
+		return null;
+	}
+
+	@Override
+	public List<Book> removeABook(int booknumber_pk) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -36,5 +36,24 @@ public class DefaultBookController implements BookController {
 	public List<Book> retrieveAllBooks() {
 		return bookService.retrieveAllBooks();
 	}
+
+	@Override
+	public List<Book> updateABook(int booknumber_pk, NewBookRequest updateBookEntry) {
+		log.debug("Controller: The primary key of the book to be updated is: {}", booknumber_pk);
+		log.debug("Controller: The new book update: {}", updateBookEntry);
+		System.out.println(updateBookEntry.getIsbn());
+		return bookService.updateABook(booknumber_pk, updateBookEntry);
+	}
+
+	@Override
+	public List<Book> removeABook(int booknumber_pk) {
+		
+		return bookService.removeABook(booknumber_pk);
+	}
+
+
+
+
+
 	
 }

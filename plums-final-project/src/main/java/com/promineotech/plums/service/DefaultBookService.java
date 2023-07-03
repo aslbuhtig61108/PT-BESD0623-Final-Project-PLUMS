@@ -27,9 +27,11 @@ public class DefaultBookService implements BookService {
 		
 		String title = newBookEntry.getTitle();
 		String isbn = newBookEntry.getIsbn();
-		String book_authors = newBookEntry.getAuthors();
+		String book_authors = newBookEntry.getBook_authors();
 		String genre = newBookEntry.getGenre().toString();
 		String notes = newBookEntry.getNotes();
+		
+		System.out.println(book_authors);
 		
 		return bookDao.saveNewBook(title, isbn, book_authors, genre, notes);
 	}
@@ -57,6 +59,20 @@ public class DefaultBookService implements BookService {
 	public List<Book> retrieveAllBooks() {
 		log.info("The retrieveAllBooks method was called without any parameters");		
 		return bookDao.retrieveAllBooks();
+	}
+
+	@Transactional (readOnly = true)
+	@Override
+	public List<Book> updateABook(int booknumber_pk, NewBookRequest updateBookEntry) {
+		log.info("The updateABook method was called to update the selected book", booknumber_pk, updateBookEntry );
+		System.out.println(updateBookEntry.getTitle());
+		return bookDao.updateSelectedBook(booknumber_pk, updateBookEntry);
+	}
+
+	@Override
+	public List<Book> removeABook(int booknumber_pk) {
+		// TODO Auto-generated method stub
+		return bookDao.removeABook(booknumber_pk);
 	}
 
 }

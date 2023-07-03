@@ -2,8 +2,6 @@ package com.promineotech.plums.entity;
 
 import java.util.Comparator;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -21,11 +19,13 @@ public class Book implements Comparable <Book>{
 	private String book_authors;
 	private Genre genre;
 	private String notes;
-	
-	@JsonIgnore
-	public int getBooknumber_pk() {
-		return booknumber_pk;
-	}
+
+	//  Unlike the video Jeep Order Project, having the primary key appear in the response body
+	//  is much easier than having to update by isbn (reason LINES 25 ~ 28 are commented out) 
+	//	@JsonIgnore
+	//	public int getBooknumber_pk() {
+	//		return booknumber_pk;
+	//	}
 
 	@Override
 	public int compareTo(Book that) {

@@ -11,6 +11,7 @@ INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-06-238
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-425-27511-5', 'FICTION', 'Field of Prey', 'John Sandford', 'Paperback 2014');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-7653-8802-5', 'FICTION', 'Vostok: Sequel To The Loch', 'Steve Alten', 'Paperback 2015');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-13-767362-9', 'JAVA', 'CORE JAVA: Volume 1: Fundamentals', 'Cay S. Horstmann', '12th Edition');
+INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-634-03817-4', 'MUSIC', 'ESSENTIAL ELEMENTS for Strings', 'Michael Allen', 'Violin Book 1');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('971-08-0428-6', 'RECIPES', 'Philippine Recipes and Other International Recipes', 'Celia Ramos', 'Paperback');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-1-1-62315-651-0', 'RECIPES', 'Seoul Food Korean Cookbook', 'Naomi Imatome-Yun', '12th Edition 2015');
 INSERT INTO books (isbn, genre, title, book_authors, notes) VALUES('978-0-06-247334-9', 'SCIFI', 'The Andromeda Evolution', 'Michael Crichton', 'Paperback 2019');

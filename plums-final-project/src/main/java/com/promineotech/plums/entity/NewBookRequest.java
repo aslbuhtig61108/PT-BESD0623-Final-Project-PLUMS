@@ -2,6 +2,7 @@
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Pattern;
+
 import lombok.Data;
 
 // This is the data transfer object (DTO) used to send a request 
@@ -10,6 +11,9 @@ import lombok.Data;
 @Data
 public class NewBookRequest {
 
+	//@NotNull
+	//private int booknumber_pk;
+	
 	@NotNull
 	@Pattern(regexp = "[\\w\\s]*")
 	private String title;
@@ -19,7 +23,7 @@ public class NewBookRequest {
 
 	@NotNull
 	@Pattern(regexp = "[\\w\\s]*")	
-	private String authors;
+	private String book_authors;
 	
 	@NotNull
 	@Pattern(regexp = "[\\w\\s]*")
