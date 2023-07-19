@@ -7,7 +7,6 @@ import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.Genre;
 import com.promineotech.plums.entity.NewBookRequest;
 import com.promineotech.plums.service.BookService;
-
 import lombok.extern.slf4j.Slf4j;
 
 @RestController

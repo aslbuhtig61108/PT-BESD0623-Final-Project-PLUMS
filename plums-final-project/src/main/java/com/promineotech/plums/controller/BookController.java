@@ -35,7 +35,7 @@ public interface BookController {
 	// formatter:off
 	@Operation(
 		summary = "Create a new entry for a book",
-		description = "Returns the created Book",
+		description = "Returns a new book entry using user input",
 		responses = { 
 		    @ApiResponse(
 		        responseCode = "201",
@@ -63,7 +63,7 @@ public interface BookController {
 	Book createNewBook(@Valid @RequestBody NewBookRequest newBookEntry);	
 
 	@Operation(
-		summary = "Returns all books",
+		summary = "Returns all available books",
 		description = "Returns all Books found in the Books database of the PLUMS",
 		responses = {
 			@ApiResponse(

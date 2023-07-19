@@ -10,7 +10,6 @@ import com.promineotech.plums.dao.BookDao;
 import com.promineotech.plums.entity.Book;
 import com.promineotech.plums.entity.NewBookRequest;
 import com.promineotech.plums.entity.Genre;
-
 import lombok.extern.slf4j.Slf4j;
 
 @Service
@@ -69,6 +68,7 @@ public class DefaultBookService implements BookService {
 		return bookDao.updateSelectedBook(booknumber_pk, updateBookEntry);
 	}
 
+	@Transactional
 	@Override
 	public List<Book> removeABook(int booknumber_pk) {
 		// TODO Auto-generated method stub

@@ -63,7 +63,7 @@ public class DefaultBookDao implements BookDao {
 
 	// ===========================================================
 
-	// Retrieves a list of books from Books database
+	// Retrieves a list of books from the books table either by isbn and/or genre
 	@Override
 	public List<Book> retrieveABook(String isbn, Genre genre) {
 		log.debug("DAO: ISBN={} or Genre={}", isbn, genre);
@@ -97,7 +97,7 @@ public class DefaultBookDao implements BookDao {
 		});
 	}
 
-	// This method retrieves a list of all available books in the Books table
+	// This method retrieves a list of all available books from the books table
 	@Override
 	public List<Book> retrieveAllBooks() {
 		log.debug("DAO: All available books should be displayed");
